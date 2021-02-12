@@ -1,0 +1,6 @@
+/** .eslintrc */
+{
+    "extends": [
+        "@1f8/eslint-config-react"
+    ]
+}

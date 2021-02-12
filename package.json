@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@1f8/eslint-config-react": "^1.2.0"
   }
 }
