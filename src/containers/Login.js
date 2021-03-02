@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { useAppContext } from '../libs/contextLib'
 import { useFormFields } from '../libs/hooksLib'
 import { Auth } from 'aws-amplify'
@@ -10,7 +9,6 @@ import { onError } from '../libs/errorLib'
 
 export default function Login() {
     const { userHasAuthenticated } = useAppContext()
-    const history = useHistory()
     const [ isLoading, setIsLoading ] = useState(false)
     const [ fields, handleFieldChange ] = useFormFields({
       email: '', password: ''
@@ -27,7 +25,6 @@ export default function Login() {
         try {
             await Auth.signIn(fields.email, fields.password)
             userHasAuthenticated(true)
-            history.push('/')
         } catch (e) {
             onError(e)
             setIsLoading(false)
